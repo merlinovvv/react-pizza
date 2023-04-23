@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 40px;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    margin-left: 17px;
+}
+
+.logo_title {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.01em;
+    color: black;
+}
+
+.logo_subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #7B7B7B;
+}
+

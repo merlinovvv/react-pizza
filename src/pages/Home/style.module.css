@@ -1,0 +1,43 @@
+
+
+.container {
+    max-width: 1225px;
+    margin: 0 auto;
+
+}
+
+.line {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #F7F7F7;
+}
+
+.pizza_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 35px;
+    row-gap: 65px;
+    grid-auto-flow: dense;
+    justify-items: center;
+    margin-top: 35px;
+    width: 100%;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: 0.01em;
+    color: #000000;
+}
+
+.pizza_page {
+    margin-top: 32px;
+}
+
+.skeleton {
+    z-index: 10;
+    width: 100%;
+    max-width: 280px;
+}

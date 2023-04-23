@@ -1,0 +1,39 @@
+.features {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.menu_list {
+    display: flex;
+    align-items: center;
+    gap: 8.95px;
+}
+
+.menu_link button {
+    padding: 15px 30px;
+    background: #F9F9F9;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    color: #2C2C2C;
+}
+
+.menu_link button._active {
+    background: #2C2C2C;
+    color: #F9F9F9;
+}
+
+.menu_link button._active:hover {
+    background: #545454;
+    color: #F9F9F9;
+}
+
+.menu_link button:hover {
+    background: #ededed;
+}
+

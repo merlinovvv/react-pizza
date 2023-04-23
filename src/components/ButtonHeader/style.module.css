@@ -1,0 +1,24 @@
+.cart_btn {
+    background: #FE5F1E;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 15px 25px;
+    border: 1px solid #FE5F1E;
+}
+
+.cart_btn:hover{
+    background: transparent;
+    color: #FE5F1E;
+}
+
+.cart_btn:hover .cart_btn_img path{
+    stroke: #FE5F1E;
+}
+
+.cart_btn_img{
+    position: relative;
+    top: 3px;
+}
