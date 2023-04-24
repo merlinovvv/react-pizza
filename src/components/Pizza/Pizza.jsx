@@ -4,15 +4,15 @@ import { useEffect, useState } from 'react';
 
 function Pizza({ name, imageUrl, price, types, sizes }) {
   const typeNames = ['тонке', 'традиційне'];
-  const sizeNames = [26, 30, 40];
 
+  const sizeNames = [26, 30, 40];
+  
   const [activeType, setActiveType] = useState(types[0]);
   const [activeSize, setActiveSize] = useState(0);
 
   useEffect(() => {
     for (let i = 0; i < sizeNames.length; i++) {
-      const index = sizes.indexOf(sizeNames[i]);
-      if (index !== -1) {
+      if (sizes.indexOf(sizeNames[i]) !== -1) {
         setActiveSize(i);
         break;
       }

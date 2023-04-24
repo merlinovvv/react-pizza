@@ -1,9 +1,9 @@
 const initialState = {
-    category: 0,
-    sortBy: 'popular'
+    category: null,
+    sortBy: 'rating'
 }
 
-const fillters = (state = initialState, action) => {
+const filters = (state = initialState, action) => {
     if (action.type === 'SET_SORT_BY') {
         return {
             ...state,
@@ -19,4 +19,4 @@ const fillters = (state = initialState, action) => {
     return state;
 }
 
-export default fillters;
+export default filters;
