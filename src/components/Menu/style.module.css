@@ -37,3 +37,44 @@
     background: #ededed;
 }
 
+.arrow {
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 7px solid black;
+    border-left: 0px solid transparent;
+    transform: rotate(-90deg);
+    margin-right: 10px;
+    display: block;
+    /* transition: all 0.1s ease 0s; */
+}
+
+.arrow.active {
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid black;
+    border-right: 0px solid transparent;
+    transform: rotate(-90deg); 
+    display: block;
+    /* transition: all 0.1s ease 0s; */
+}
+
+.menu_list_category{
+    display:flex;
+    align-items: center;
+}
+
+label{
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 525px) {
+    .menu_list_category{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -1,11 +1,11 @@
 import { useEffect, useState, useRef } from 'react';
 import style from './style.module.css';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 function Sort({ activeSortType, items, onClickSortType }) {
-
   const [visiblePopup, setVisiblePopup] = useState(false);
-  const activeName = items[items.findIndex(item => item.type === activeSortType)].name;
+  const activeName =
+    items[items.findIndex((item) => item.type === activeSortType)].name;
 
   const sortRef = useRef();
   const clickPopup = () => {
@@ -23,23 +23,23 @@ function Sort({ activeSortType, items, onClickSortType }) {
   }, []);
 
   const onSelectItem = (index) => {
-    onClickSortType(index)
+    onClickSortType(index);
     setVisiblePopup(false);
   };
 
   return (
     <div ref={sortRef} className={style.sorting}>
       <div className={style.label}>
-        <span
-          className={
-            style.arrow + ' ' + (visiblePopup ? style.active : '')
-          }></span>
         <label htmlFor="sort">
+          <span
+            className={
+              style.arrow + ' ' + (visiblePopup ? style.active : '')
+            }></span>
           Сортування за:{' '}
-          <span onClick={clickPopup} className={style.click_link}>
-            {activeName}
-          </span>
         </label>
+        <span onClick={clickPopup} className={style.click_link}>
+          {activeName}
+        </span>
       </div>
       {visiblePopup && (
         <ul id="sort" className={style.sort_list + ' ' + style.active_popup}>
@@ -65,11 +65,11 @@ function Sort({ activeSortType, items, onClickSortType }) {
 Sort.propTypes = {
   activeSortType: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
-  onClickSortType: PropTypes.func.isRequired
+  onClickSortType: PropTypes.func.isRequired,
 };
 
 Sort.defaultProps = {
-  items: []
-}
+  items: [],
+};
 
 export default Sort;

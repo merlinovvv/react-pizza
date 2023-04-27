@@ -1,12 +1,11 @@
 import style from './style.module.css';
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-function Pizza({ name, imageUrl, price, types, sizes }) {
+function Pizza({ id, name, imageUrl, price, types, sizes, onClickAddPizza, totalPizzas }) {
   const typeNames = ['тонке', 'традиційне'];
-
   const sizeNames = [26, 30, 40];
-  
   const [activeType, setActiveType] = useState(types[0]);
   const [activeSize, setActiveSize] = useState(0);
 
@@ -17,7 +16,9 @@ function Pizza({ name, imageUrl, price, types, sizes }) {
         break;
       }
     }
-  },[]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const onSelectType = (index) => {
     setActiveType(index);
@@ -27,6 +28,18 @@ function Pizza({ name, imageUrl, price, types, sizes }) {
     setActiveSize(index);
   };
 
+  const onAddPizza = () => {
+    const obj = {
+      id,
+      name,
+      imageUrl,
+      price,
+      type: typeNames[activeType],
+      size: sizeNames[activeSize],
+    };
+    onClickAddPizza(obj);
+
+  };
   return (
     <div className={style.pizza_box}>
       <img src={imageUrl} alt={name} />
@@ -69,10 +82,10 @@ function Pizza({ name, imageUrl, price, types, sizes }) {
       </div>
       <div className={style.purchase}>
         <p className={style.price}>від {price} ₴</p>
-        <button className={style.add_cart}>
+        <button onClick={onAddPizza} className={style.add_cart}>
           <span className={style.plus}></span>
           Додати
-          <span className={style.quantity}></span>
+          <span className={totalPizzas[id] === 0 || totalPizzas[id] === null || totalPizzas[id] === undefined ? '' : style.quantity}>{totalPizzas[id] ? totalPizzas[id].length : null}</span>
         </button>
       </div>
     </div>
@@ -85,6 +98,7 @@ Pizza.propTypes = {
   price: PropTypes.number,
   types: PropTypes.arrayOf(PropTypes.number),
   sizes: PropTypes.arrayOf(PropTypes.number),
+  onClickAddPizza: PropTypes.func.isRequired,
 };
 
 Pizza.defaultProps = {
@@ -92,6 +106,6 @@ Pizza.defaultProps = {
   price: 0,
   types: [],
   sizes: [],
-}
+};
 
 export default Pizza;

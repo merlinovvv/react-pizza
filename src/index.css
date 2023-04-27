@@ -1,49 +1,139 @@
 body {
-  margin: 0;
-  font-family: 'Proxima Nova', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: #FFDF8C;
-  padding: 0px 50px 0px;
+	margin: 0;
+	font-family: 'Proxima Nova', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #CBCBCB #F6F6F6;
+}
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+	width: 10px;
+	width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+	border-radius: 5px;
+	background-color: #ffffff;
+}
+
+*::-webkit-scrollbar-track:hover {
+	background-color: #F3F3F3;
+}
+
+*::-webkit-scrollbar-track:active {
+	background-color: #EAEAEA;
+}
+
+*::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background-color: #CBCBCB;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background-color: #B8B8B8;
+}
+
+*::-webkit-scrollbar-thumb:active {
+	background-color: #949494;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
 }
 
 /*Обнуление*/
-*{
+* {
 	padding: 0;
 	margin: 0;
 	border: 0;
 }
-*,*:before,*:after{
+
+*,
+*:before,
+*:after {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-:focus,:active{outline: none;}
-a:focus,a:active{outline: none;}
 
-nav,footer,header,aside{display: block;}
+:focus,
+:active {
+	outline: none;
+}
 
-html,body{
+a:focus,
+a:active {
+	outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+	display: block;
+}
+
+html,
+body {
 	height: 100%;
 	width: 100%;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
-input,button,textarea{font-family:inherit;}
 
-input::-ms-clear{display: none;}
-button{cursor: pointer;}
-button::-moz-focus-inner {padding:0;border:0;}
-a, a:visited{text-decoration: none;}
-a:hover{text-decoration: none;}
-ul li{list-style: none;}
-img{vertical-align: top; position: relative; z-index: 1;}
+input,
+button,
+textarea {
+	font-family: inherit;
+}
 
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+input::-ms-clear {
+	display: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+
+a,
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+ul li {
+	list-style: none;
+}
+
+img {
+	vertical-align: top;
+	position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: inherit;
+	font-weight: 400;
+}
+
 /*--------------------*/

@@ -22,3 +22,11 @@
     position: relative;
     top: 3px;
 }
+
+@media (max-width: 525px) {
+    .cart_btn {
+        font-size: 12px;
+        line-height: 22px;
+        padding: 10px 17px;
+    }
+}

@@ -2,8 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 0 40px;
-
+    min-height: 95px;
 }
 
 .logo {
@@ -30,3 +29,31 @@
     color: #7B7B7B;
 }
 
+@media (max-width: 525px) {
+    .logo_title {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .text{
+        margin-left: 10px;
+    }
+
+    .logo_subtitle {
+        font-size: 11px;
+        line-height: 11px;
+        max-width: 120px;
+    }
+    .logo img {
+        max-width: 32px;
+    }
+    .cart_btn {
+        font-size: 12px;
+        line-height: 22px;
+        padding: 10px 17px;
+    }
+
+    .header{
+        padding: 0px;
+        min-height: 75px;
+    }
+}

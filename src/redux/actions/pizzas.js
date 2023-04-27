@@ -7,8 +7,7 @@ export const setLoaded = (payload) => ({
 
 export const fetchPizzas = (category, sortBy) => (dispatch) => {
     dispatch(setLoaded(false));
-    console.log(category, sortBy);
-    const mainUrl = 'http://localhost:3001/pizzas';
+    const mainUrl = 'http://192.168.0.103:3001/pizzas';
     const categoryUrl = `?${category === null ? '' : `category=${category}`}`;
     const sortUrl = `&_sort=${sortBy}&_order=${sortBy === 'name' ? 'asc' : 'desc'}`;
     axios.get(mainUrl + categoryUrl + sortUrl).then(({ data }) => {

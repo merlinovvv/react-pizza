@@ -139,3 +139,18 @@
 .plus::after {
     transform: translate(-50%, -50%);
 }
+.quantity{
+    width: 20px;
+    height: 20px;
+    background-color: #FE5F1E;
+    border-radius: 50%;
+    display: block;
+    line-height: 22px;
+    color: #fff;
+}
+
+.add_cart:hover .quantity{
+    background-color: #fff;
+    color: #FE5F1E;
+}
+

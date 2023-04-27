@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom';
-import HeaderButton from '../ButtonHeader/ButtonHeader';
+import { useSelector } from 'react-redux';
+import ButtonHeader from '../ButtonHeader/ButtonHeader';
 import style from './style.module.css';
 
-function Header(props) {
+function Header({displayButton}) {
+  const { totalPrice, totalCount } = useSelector(({ cart }) => cart);
+
   return (
     <div className={style.header}>
       <Link to="/">
@@ -15,9 +18,9 @@ function Header(props) {
         </div>
       </Link>
 
-      {props.displayButton && (
+      {displayButton && (
         <Link to="/cart">
-          <HeaderButton />
+          <ButtonHeader totalPrice={totalPrice} totalCount={totalCount} />
         </Link>
       )}
     </div>

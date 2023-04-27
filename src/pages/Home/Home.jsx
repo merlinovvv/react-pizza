@@ -1,37 +1,45 @@
-import style from './style.module.css';
-import { Menu, Pizza } from '../../components';
+import { useCallback, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { Menu, Pizza, PizzasLoading } from '../../components';
 import { setCategory, setSortBy } from '../../redux/actions/filters';
-import { useCallback } from 'react';
 import { fetchPizzas } from '../../redux/actions/pizzas';
-import PizzasLoading from '../../components/PizzasLoading/PizzasLoading';
+import style from './style.module.css';
+import { addPizzaToCart } from '../../redux/actions/cart';
 
 const categories = ['М`ясні', 'Вегетаріанські', 'Гриль', 'Гострі', 'Закриті'];
 
 function Home() {
   const dispatch = useDispatch();
-  const items = useSelector(({ pizzas }) => pizzas.items);
+  const itemsPizzas = useSelector(({ pizzas }) => pizzas.items);
   const isLoaded = useSelector(({ pizzas }) => pizzas.isLoaded);
   const { category, sortBy } = useSelector(({ filters }) => filters);
 
   useEffect(() => {
     dispatch(fetchPizzas(category, sortBy));
-  }, [category, sortBy, dispatch]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [category, sortBy]);
 
   const onSelectCategory = useCallback(
     (index) => {
       dispatch(setCategory(index));
     },
-    [dispatch]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
   );
 
   const onClickSortType = useCallback(
     (type) => {
       dispatch(setSortBy(type));
     },
-    [dispatch]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
   );
+
+  const handleAddPizzaToCart = (obj) => {
+    dispatch(addPizzaToCart(obj))
+  };
+
+  const { items } = useSelector(({ cart }) => cart);
 
   return (
     <div className={style.home}>
@@ -51,7 +59,15 @@ function Home() {
               Array(12)
                 .fill()
                 .map((_, index) => <PizzasLoading key={index} />)}
-            {items && items.map((pizza) => <Pizza key={pizza.id} {...pizza} />)}
+            {itemsPizzas &&
+              itemsPizzas.map((pizza) => (
+                <Pizza
+                  onClickAddPizza={handleAddPizzaToCart}
+                  key={pizza.id}
+                  totalPizzas={items}
+                  {...pizza}
+                />
+              ))}
           </div>
         </div>
       </div>

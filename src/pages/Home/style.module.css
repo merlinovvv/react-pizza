@@ -1,9 +1,9 @@
 
 
 .container {
-    max-width: 1225px;
+    max-width: 1285px;
     margin: 0 auto;
-
+    padding: 0 30px;
 }
 
 .line {
@@ -40,4 +40,12 @@
     z-index: 10;
     width: 100%;
     max-width: 280px;
+}
+
+@media (max-width: 525px) {
+    .container {
+        max-width: 1285px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
 }
